@@ -33,6 +33,13 @@ policy text did not change when its URL did.
 
 ## Hosting
 
+> **This repo must stay PUBLIC.** GitHub Pages is disabled on private repos for
+> free accounts, so flipping it private takes every URL above to 404 with no
+> warning. This is not theoretical: the 2026-07-27 transfer from `JohnAbish` to
+> `john-abish` silently flipped visibility to private and the site went down
+> until it was set public and Pages re-enabled. Nothing here is secret — the
+> whole point is that Google and users can read it.
+
 - GitHub Pages, `main` branch, root directory.
 - `CNAME` pins the custom domain; DNS is a `CNAME` record at the registrar
   (`legal` → `johnabish.github.io`).
