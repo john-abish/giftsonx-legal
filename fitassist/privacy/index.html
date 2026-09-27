@@ -38,7 +38,7 @@
 <p class="meta">
   Publisher: John Abish (sole proprietor), Ontario, Canada · Contact:
   <a href="mailto:support@giftsonx.com">support@giftsonx.com</a><br>
-  Version: 2026-08-26 · Last updated: August 26, 2026 · Replaces the version dated July 27, 2026
+  Version: 2026-09-27 · Last updated: September 27, 2026 · Replaces the version dated August 26, 2026
 </p>
 
 <div class="summary">
@@ -48,7 +48,7 @@
     <li><strong>Photos are analyzed and immediately discarded.</strong> We never store your body-scan or meal photos on our servers; only the numbers derived from them are kept.</li>
     <li>Body-scan measurements are <strong>estimates</strong> produced by software that is still being calibrated — not medical measurements.</li>
     <li>We never sell your data, never share it for advertising, and run no advertising or third-party analytics SDKs in the app.</li>
-    <li>Payments are handled entirely by Google Play — we never see your card details.</li>
+    <li>Payments are handled entirely by Google Play or Apple's App Store — we never see your card details.</li>
     <li>Reading your weight from Health Connect is optional and off by default.</li>
     <li>You can delete any body scan, or your whole account, inside the app at any time, or request deletion from our <a href="../delete/">deletion page</a> without the app.</li>
     <li>Questions or requests: <a href="mailto:support@giftsonx.com">support@giftsonx.com</a>.</li>
@@ -56,11 +56,11 @@
 </div>
 
 <div class="changes">
-  <strong>What changed in this version.</strong> Fit Assist now includes a body scan, a meal photo scan,
-  and a barcode lookup. This version adds sections 3 and 4 describing them, names the three new service
-  providers involved (Anthropic, Open Food Facts, and Sentry — section 7), adds retention rows for photos
-  and scans (section 10), and explains what deleting a scan or your account does to that data (section 11).
-  Nothing about how your existing data is handled has changed.
+  <strong>What changed in this version.</strong> Fit Assist is coming to iPhone. This version names
+  Apple as an optional sign-in method and, on iPhone, as the payment processor (sections 2 and 7),
+  explains how to stop using Sign in with Apple (section 11), and says more precisely where the app
+  shows a measurement's uncertainty range (section 3). Nothing about how your data is handled has
+  changed.
 </div>
 
 <h2>1. Who we are</h2>
@@ -90,7 +90,9 @@ discarded, and <strong>a photo is never stored on our servers</strong>.</p>
 <p>Weigh-ins you log, foods you log (including custom foods you create), workout sets and
 completions, routines you build, the plans we generate for you, weekly and daily adaptation
 decisions, and a closed set of first-party product-analytics events (for example "plan
-revealed", "food logged", "body scan captured"). Analytics events use a fixed vocabulary and
+revealed", "food logged", "body scan captured"), including the campaign tag of the link you installed the app
+from, where the store provides one, and your optional answer to "How did you find Fit
+Assist?". Analytics events use a fixed vocabulary and
 carry no free-text content and no photos.</p>
 <p>From the body scan: your estimated measurements with their uncertainty ranges, the shape
 values of your 3D model, the decisions you make when the app asks you to check a reading
@@ -118,11 +120,13 @@ lookups: the product you scanned.</p>
 </ul>
 
 <h3>From our sign-in and payment partners</h3>
-<p>If you sign in with Google, Google shares your email address and basic profile with our
-sign-in provider, Clerk, to create your account, under Google's own privacy policy. From Google
-Play via RevenueCat we receive your subscription entitlement state and purchase events.
-<strong>We never receive or store your payment card or billing details</strong> — Google is the
-merchant of record.</p>
+<p>If you sign in with Google or with Apple, that provider shares your email address and basic
+profile with our sign-in provider, Clerk, to create your account, under the provider's own privacy
+policy. Sign in with Apple sends your name once, at first sign-in, and lets you choose "Hide My
+Email", in which case Apple gives us a private relay address instead of your real one and forwards
+our emails to you. From Google Play or the App Store, via RevenueCat, we receive your subscription
+entitlement state and purchase events. <strong>We never receive or store your payment card or
+billing details</strong> — Google or Apple is the merchant of record.</p>
 
 <h2 id="body-scan">3. The body scan</h2>
 <p>The body scan estimates tape-style body measurements — neck, chest, waist, hips, thighs, arms
@@ -152,7 +156,7 @@ and produce no stored record at all.</p>
 values that define your 3D model (a handful of numbers, not a photo); the fingerprint of each
 photo, which cannot be turned back into the image and exists so we can prove a result came from a
 given photo and reject mismatches; the height and weight the scan used; the model and consent
-versions; the time of the scan; and any coach-check decision or tape measurement you entered.
+versions; the time of the scan; and any scan-check decision or tape measurement you entered.
 Your body-fat estimate is recalculated from those stored measurements whenever you view it and is
 not itself stored.</p>
 
@@ -163,8 +167,9 @@ your measurements, not a likeness of you.</p>
 
 <h3>What the numbers are — and are not</h3>
 <p>Measurements are <strong>estimates, produced by software that is in beta calibration</strong>.
-Every value is shown with its uncertainty range, and at some sites the typical difference from a
-real tape measure is several centimetres. They are not medical measurements, they are not a
+Every measurement has an uncertainty range, and the app shows it — as a shaded band or a ± figure —
+wherever it lists your measurements in full. At some sites the typical difference from a real tape
+measure is several centimetres. They are not medical measurements, they are not a
 diagnosis of anything, and they must not be used to make medical decisions. If you need a number
 you can rely on, use a tape — the app lets you enter one in place of any estimate.</p>
 
@@ -253,10 +258,14 @@ or third-party analytics SDKs.</strong> (Error monitoring runs on our server, no
       <td>Sign-in and accounts</td><td>Email address, sign-in metadata, session tokens</td><td>United States</td></tr>
   <tr><td>Google LLC — Sign in with Google (<a href="https://policies.google.com/privacy" rel="noopener">privacy</a>)</td>
       <td>Optional sign-in method</td><td>Only if you choose it: your sign-in request, under Google's policy</td><td>Global</td></tr>
+  <tr><td>Apple Inc. — Sign in with Apple (<a href="https://www.apple.com/legal/privacy/" rel="noopener">privacy</a>)</td>
+      <td>Optional sign-in method (iOS)</td><td>Only if you choose it: your sign-in request; with Hide My Email, Apple relays email between us and you</td><td>Global</td></tr>
   <tr><td>RevenueCat, Inc. (<a href="https://www.revenuecat.com/privacy" rel="noopener">privacy</a>)</td>
       <td>Subscription management</td><td>A pseudonymous user ID and purchase/entitlement events</td><td>United States</td></tr>
   <tr><td>Google LLC — Google Play Billing (<a href="https://policies.google.com/privacy" rel="noopener">privacy</a>)</td>
       <td>Payment processing (merchant of record)</td><td>Your payment details go to Google directly; we receive only entitlement state</td><td>Global</td></tr>
+  <tr><td>Apple Inc. — App Store In-App Purchase (<a href="https://www.apple.com/legal/privacy/" rel="noopener">privacy</a>)</td>
+      <td>Payment processing (merchant of record on iOS)</td><td>Your payment details go to Apple directly; we receive only entitlement state</td><td>Global</td></tr>
   <tr><td>Google — Health Connect</td>
       <td>On-device health data store</td><td>Weight records are read on your device with your permission (section 9)</td><td>On your device</td></tr>
   <tr><td>Anthropic, PBC (<a href="https://www.anthropic.com/privacy" rel="noopener">privacy</a>)</td>
@@ -305,7 +314,7 @@ this policy is your notice of processing outside Canada.</p>
 <table>
   <tr><th>Category</th><th>How long</th></tr>
   <tr><td>Photos — body scan, meal scan, framing-check frames</td><td><strong>Not stored on our servers.</strong> Processed in memory and discarded within the request. Meal photos sent to Anthropic are deleted by Anthropic within 30 days (section 4). Copies stay on your phone until you delete them or uninstall the app</td></tr>
-  <tr><td>Body scans: measurements, 3D-model shape values, photo fingerprints, coach-check decisions, tape entries, body target</td><td>Until you delete the scan or your account — then <strong>erased</strong>, not de-identified</td></tr>
+  <tr><td>Body scans: measurements, 3D-model shape values, photo fingerprints, scan-check decisions, tape entries, body target</td><td>Until you delete the scan or your account — then <strong>erased</strong>, not de-identified</td></tr>
   <tr><td>Anonymous onboarding scan preview</td><td>48 hours, then automatically deleted — or converted into your first scan if you create an account in that time</td></tr>
   <tr><td>Meal-scan results (foods and portions — no image)</td><td>While your account is active; after deletion, retained only in de-identified form (section 11)</td></tr>
   <tr><td>Barcode product cache</td><td>Product information only, not personal information; refreshed at least every 30 days</td></tr>
@@ -340,6 +349,8 @@ that we cannot edit after the fact; this is a deliberate safety and integrity de
 safety audit trail, a legal record-keeping measure. Those records survive deletion, but they are
 stripped of every identifier and are no longer associated with you or any account. We cannot
 re-link them to you, and neither can anyone else.</p>
+<p>If you signed in with Apple, you can also stop using your Apple ID with Fit Assist under
+Settings → your name → Sign in with Apple; when Apple tells the app, it signs you out.</p>
 
 <h2>12. Children</h2>
 <p>Fit Assist is for adults <strong>18 and over</strong>. Setup asks your age and exits for
@@ -378,7 +389,7 @@ applies to you.</p>
 <a href="mailto:support@giftsonx.com">support@giftsonx.com</a></p>
 
 <footer>
-  Fit Assist · <a href="../terms/">Terms of Use</a> · <a href="../delete/">Data &amp; account deletion</a> · Version: 2026-08-26
+  Fit Assist · <a href="../terms/">Terms of Use</a> · <a href="../delete/">Data &amp; account deletion</a> · Version: 2026-09-27
 </footer>
 
 </body>
