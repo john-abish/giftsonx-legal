@@ -198,15 +198,11 @@ erases every scan, onboarding preview and body target at once (section 11).</p>
 
 <h2 id="meal-scan">4. Meal photo scan and barcode lookup</h2>
 <h3>Meal photo scan</h3>
-<p>When you scan a meal, the photo, your optional note, and the meal slot are sent to our server and
-from there to <strong>Anthropic, PBC</strong> (United States), the company that makes the Claude
-AI models, acting as our service provider. Anthropic returns a suggested list of foods and
-portions, which the app shows you as an editable draft; nothing is logged until you confirm it.
-The same path handles a typed description without a photo.</p>
-<p>Anthropic processes your photo and note only to return that result. Under its commercial terms
-it does not use your inputs to train its models, and it deletes inputs and outputs within
-<strong>30 days</strong>, except where it must keep them longer to enforce its usage policies or
-comply with law. <strong>We do not store the photo at all</strong> — it is held in our server's
+<p>When you scan a meal, the photo, your optional note, and the meal slot are sent to our server,
+to suggest the foods and portions. The app shows them to you as an editable draft; nothing is logged 
+until you confirm it. The same path handles a typed description without a photo.</p>
+<p>The app server processes your photo and note only to return that result and for no other purpose.
+<strong>We do not store the photo at all</strong> — it is held in our server's
 memory for the request and discarded; we store only the structured result and a record that a scan
 happened, which is how the free tier's daily scan allowance is counted.</p>
 <p>Photograph the food, not people. If a photo does include a person, it is processed in exactly
@@ -277,8 +273,6 @@ or third-party analytics SDKs.</strong> (Error monitoring runs on our server, no
       <td>Payment processing (merchant of record on iOS)</td><td>Your payment details go to Apple directly; we receive only entitlement state</td><td>Global</td></tr>
   <tr><td>Google — Health Connect</td>
       <td>On-device health data store</td><td>Weight records are read on your device with your permission (section 9)</td><td>On your device</td></tr>
-  <tr><td>Anthropic, PBC (<a href="https://www.anthropic.com/privacy" rel="noopener">privacy</a>)</td>
-      <td>Meal photo analysis (AI service provider)</td><td>Meal photos, your meal-scan note and meal slot — nothing else; never body-scan photos (section 4)</td><td>United States</td></tr>
   <tr><td>Open Food Facts (<a href="https://world.openfoodfacts.org/privacy" rel="noopener">privacy</a>)</td>
       <td>Product database for barcode lookup</td><td>The barcode number only, sent from our server — no account, device or IP data</td><td>France (EU)</td></tr>
   <tr><td>Functional Software, Inc. — Sentry (<a href="https://sentry.io/privacy/" rel="noopener">privacy</a>)</td>
@@ -294,7 +288,7 @@ runtime requests to font or asset services that could expose your IP address to 
 
 <h2>8. International transfers</h2>
 <p>Our servers, database and backups are hosted by Amazon Web Services in the <strong>United States</strong>, and
-Anthropic, Sentry and Resend process data there too; Open Food Facts is in France. If you use Fit Assist
+Sentry and Resend process data there too; Open Food Facts is in France. If you use Fit Assist
 from Canada, the EEA, the UK, or elsewhere, your information is transferred to and processed in
 the United States, where laws may differ from those of your home jurisdiction. For EEA/UK users,
 transfers rely on appropriate safeguards such as Standard Contractual Clauses maintained by our
@@ -324,7 +318,7 @@ this policy is your notice of processing outside Canada.</p>
 <div class="tablewrap">
 <table>
   <tr><th>Category</th><th>How long</th></tr>
-  <tr><td>Photos — body scan, meal scan, framing-check frames</td><td><strong>Not stored on our servers.</strong> Processed in memory and discarded within the request. Meal photos sent to Anthropic are deleted by Anthropic within 30 days (section 4). Copies stay on your phone until you delete them or uninstall the app</td></tr>
+  <tr><td>Photos — body scan, meal scan, framing-check frames</td><td><strong>Not stored on our servers.</strong> Processed in memory and discarded within the request. Copies stay on your phone until you delete them or uninstall the app</td></tr>
   <tr><td>Body scans: measurements, 3D-model shape values, photo fingerprints, scan-check decisions, tape entries, body target</td><td>Until you delete the scan or your account — then <strong>erased</strong>, not de-identified</td></tr>
   <tr><td>Anonymous onboarding scan preview</td><td>48 hours, then automatically deleted — or converted into your first scan if you create an account in that time</td></tr>
   <tr><td>Meal-scan results (foods and portions — no image)</td><td>While your account is active; after deletion, retained only in de-identified form (section 11)</td></tr>
